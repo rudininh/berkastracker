@@ -65,13 +65,15 @@
         </div>
     </div>
 
+    
+
     <script src="https://kit.fontawesome.com/07afc061fe.js" crossorigin="anonymous"></script>
 
 <div id="modal-write" class="modal">
   <a href="#" class="modal-close"></a>
   <div class="modal-content">
     <a href="#" class="modal-close"></a>
-    <div class="modal-header">New Post</div>
+    <div class="modal-header">Buat Berkas Baru</div>
     <div class="modal-body">
       <label for="modal-write-title">Post Title</label>
       <input type="text" name="title" id="modal-write-title" placeholder=" Give your post a name..." required>
@@ -115,15 +117,11 @@
 </div>
 <div id="mega-button">
   <div class="tooltip">Hover me!</div>
-  <a class="sub-button" id="buttons--write" href="#modal-write"></a>
+  <a class="sub-button" id="buttons--write" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"></a>
   <a class="sub-button" id="buttons--archive" href="#modal-archive"></a>
   <a class="sub-button" id="buttons--delete" href="#modal-delete"></a>
 </div>
 
-
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -160,13 +158,7 @@
 
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-.modal .modal-content .modal-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.modal .modal-content .modal-body::-webkit-scrollbar {
-  display: none;
-}
+
 body {
   margin: 0;
   background-color: #eceff1;
@@ -351,301 +343,6 @@ body {
 }
 #mega-button:hover .tooltip, .modal:target ~ #mega-button .tooltip {
   opacity: 0;
-}
-.modal {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  z-index: 2;
-}
-.modal > .modal-close::before {
-  content: "";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: rgba(38, 50, 56, 0.5);
-}
-.modal .modal-content {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 90%;
-  max-width: 600px;
-  max-height: 90%;
-  overflow: visible;
-  transform: translate(-50%, -50%);
-}
-.modal .modal-content > div:first-of-type {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-.modal .modal-content > div:last-of-type {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-.modal .modal-content > .modal-close::after {
-  content: "";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 28px;
-  height: 28px;
-  z-index: -1;
-  background-color: #546e7a;
-  border-radius: 50%;
-  font-family: "Font Awesome 5 Pro";
-  font-size: 18px;
-  font-weight: 400;
-  color: #fff;
-  transform: translate(37.5%, -37.5%);
-  transition: all 0.15s ease-out;
-  z-index: 1;
-}
-.modal .modal-content > .modal-close ~ div:first-of-type {
-  border-top-right-radius: 0;
-}
-.modal .modal-content > .modal-close:hover::after {
-  background-color: #263238;
-}
-.modal .modal-content .modal-header {
-  padding: 10px 5px;
-  background-color: #37474f;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-}
-.modal .modal-content .modal-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  overflow-y: auto;
-  background-color: #eceff1;
-}
-.modal .modal-content .modal-body p {
-  color: #455a64;
-  text-align: center;
-}
-.modal .modal-content .modal-body p + p, .modal .modal-content .modal-body p + .modal-actions {
-  margin-top: 0;
-}
-.modal .modal-content .modal-body > :first-child {
-  margin-top: 0;
-}
-.modal .modal-content .modal-body label {
-  margin-bottom: 4px;
-  font-weight: 500;
-  color: #78909c;
-}
-.modal .modal-content .modal-body label:not(:first-of-type) {
-  margin-top: 10px;
-}
-.modal .modal-content .modal-body input, .modal .modal-content .modal-body textarea {
-  font-family: inherit;
-}
-.modal .modal-content .modal-body input:focus, .modal .modal-content .modal-body textarea:focus {
-  outline: 0 !important;
-}
-.modal .modal-content .modal-body input {
-  display: block;
-  width: 235px;
-  padding: 4px 10px;
-  align-self: flex-start;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: #303f9f;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
-  color: #455a64;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: all 0.15s ease-out;
-  will-change: width, padding, background-color, border-radius, font-size, font-weight;
-}
-.modal .modal-content .modal-body input::-webkit-input-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-size: inherit;
-  font-weight: 500;
-  color: #fff;
-  -webkit-transition: inherit;
-  transition: inherit;
-  will-change: font-size, font-weight, color;
-}
-.modal .modal-content .modal-body input:-moz-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-size: inherit;
-  font-weight: 500;
-  color: #fff;
-  -moz-transition: inherit;
-  transition: inherit;
-  will-change: font-size, font-weight, color;
-}
-.modal .modal-content .modal-body input::-moz-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-size: inherit;
-  font-weight: 500;
-  color: #fff;
-  -moz-transition: inherit;
-  transition: inherit;
-  will-change: font-size, font-weight, color;
-}
-.modal .modal-content .modal-body input:-ms-input-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-size: inherit;
-  font-weight: 500;
-  color: #fff;
-  -ms-transition: inherit;
-  transition: inherit;
-  will-change: font-size, font-weight, color;
-}
-.modal .modal-content .modal-body input:focus, .modal .modal-content .modal-body input:valid {
-  width: 100%;
-  padding: 4px 0;
-  background-color: transparent;
-  border-radius: 0;
-  cursor: text;
-}
-.modal .modal-content .modal-body input:focus::-webkit-input-placeholder, .modal .modal-content .modal-body input:valid::-webkit-input-placeholder {
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body input:focus:-moz-placeholder, .modal .modal-content .modal-body input:valid:-moz-placeholder {
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body input:focus::-moz-placeholder, .modal .modal-content .modal-body input:valid::-moz-placeholder {
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body input:focus:-ms-input-placeholder, .modal .modal-content .modal-body input:valid:-ms-input-placeholder {
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body input:valid:not(:focus) {
-  font-size: 20px;
-  font-weight: 500;
-}
-.modal .modal-content .modal-body textarea {
-  display: block;
-  min-height: 150px;
-  padding: 8px 10px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  resize: vertical;
-  background-color: #fff;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px -5px #37474f;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18px;
-  color: #455a64;
-  box-sizing: border-box;
-}
-.modal .modal-content .modal-body textarea::-webkit-input-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body textarea:-moz-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body textarea::-moz-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body textarea:-ms-input-placeholder {
-  font-family: "Font Awesome 5 Pro", "Poppins", sans-serif;
-  font-weight: inherit;
-  color: #78909c;
-}
-.modal .modal-content .modal-body .modal-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
-.modal .modal-content .modal-body .modal-actions a, .modal .modal-content .modal-body .modal-actions button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  padding: 0 15px;
-  background-color: #607d8b;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px -15px #455a64;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  text-decoration: none !important;
-  transition: box-shadow 0.15s ease-out;
-  will-change: box-shadow;
-  cursor: pointer;
-}
-.modal .modal-content .modal-body .modal-actions a.write, .modal .modal-content .modal-body .modal-actions button.write {
-  background-color: #2196f3;
-}
-.modal .modal-content .modal-body .modal-actions a.archive, .modal .modal-content .modal-body .modal-actions button.archive {
-  background-color: #ef6c00;
-}
-.modal .modal-content .modal-body .modal-actions a.delete, .modal .modal-content .modal-body .modal-actions button.delete {
-  background-color: #f44336;
-}
-.modal .modal-content .modal-body .modal-actions a.write, .modal .modal-content .modal-body .modal-actions button.write {
-  box-shadow: 0 5px 10px -15px #0d47a1;
-}
-.modal .modal-content .modal-body .modal-actions a.archive, .modal .modal-content .modal-body .modal-actions button.archive {
-  box-shadow: 0 5px 10px -15px #bf360c;
-}
-.modal .modal-content .modal-body .modal-actions a.delete, .modal .modal-content .modal-body .modal-actions button.delete {
-  box-shadow: 0 5px 10px -15px #b71c1c;
-}
-.modal .modal-content .modal-body .modal-actions a:hover, .modal .modal-content .modal-body .modal-actions button:hover {
-  box-shadow: 0 5px 10px -5px #455a64;
-}
-.modal .modal-content .modal-body .modal-actions a:hover.write, .modal .modal-content .modal-body .modal-actions button:hover.write {
-  box-shadow: 0 5px 10px -5px #0d47a1;
-}
-.modal .modal-content .modal-body .modal-actions a:hover.archive, .modal .modal-content .modal-body .modal-actions button:hover.archive {
-  box-shadow: 0 5px 10px -5px #bf360c;
-}
-.modal .modal-content .modal-body .modal-actions a:hover.delete, .modal .modal-content .modal-body .modal-actions button:hover.delete {
-  box-shadow: 0 5px 10px -5px #b71c1c;
-}
-.modal .modal-content .modal-body .modal-actions a + a, .modal .modal-content .modal-body .modal-actions a + button, .modal .modal-content .modal-body .modal-actions button + a, .modal .modal-content .modal-body .modal-actions button + button {
-  margin-left: 4px;
-}
-.modal:target {
-  display: block;
 }
 @-webkit-keyframes tooltip-hover {
   from {
