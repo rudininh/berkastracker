@@ -73,7 +73,7 @@
   <a href="#" class="modal-close"></a>
   <div class="modal-content">
     <a href="#" class="modal-close"></a>
-    <div class="modal-header">Buat Berkas Baru </div>
+    <div class="modal-header">Buat Berkas Baru ssss</div>
     <div class="modal-body">
       <label for="modal-write-title">Post Title</label>
       <input type="text" name="title" id="modal-write-title" placeholder=" Give your post a name..." required>
